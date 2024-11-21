@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]) {
     std::vector<double> query = {0.17565562, 0.86317892};
 
     GEO::NearestNeighborSearch_var interp = GEO::NearestNeighborSearch::create(2, "BNN");
-    interp->set_points(coords.size(), coords.data());
+    interp->set_points(coords.size() / 2, coords.data());
     size_t found_index = interp->get_nearest_neighbor(query.data());
     std::cout << "Index found with geogram: " << found_index << std::endl;
 
